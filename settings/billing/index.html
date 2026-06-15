@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Billing Settings</title>
+    <style>
+      body { margin: 0; font-family: Inter, Arial, sans-serif; color: #172033; background: #eef4fb; }
+      main { display: grid; gap: 18px; max-width: 1040px; margin: 0 auto; padding: 32px 20px; }
+      header, section { background: #fff; border: 1px solid #d8e0ea; border-radius: 8px; padding: 20px; }
+      .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+      .plan { border: 1px solid #d8e0ea; border-radius: 8px; padding: 16px; }
+      button { min-height: 40px; border: 0; border-radius: 6px; padding: 0 14px; background: #0969da; color: #fff; font-weight: 700; }
+      @media (max-width: 720px) { .grid { grid-template-columns: 1fr; } }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <p>Acme Admin</p>
+        <h1>Billing settings</h1>
+        <p>Review plan usage, renewal timing, and billing owner controls.</p>
+      </header>
+      <section data-review-id="billing-summary" aria-label="Billing summary">
+        <h2>Billing summary</h2>
+        <p>Usage renews on June 30 with plan changes applied immediately.</p>
+      </section>
+      <section>
+        <h2>Available plans</h2>
+        <div class="grid">
+          <article class="plan"><h3>Team</h3><p>For small review teams.</p></article>
+          <article class="plan"><h3>Business</h3><p>For cross-functional review programs.</p></article>
+          <article class="plan"><h3>Enterprise</h3><p>For governed provider access and audit workflows.</p></article>
+        </div>
+      </section>
+      <section>
+        <h2>Confirm changes</h2>
+        <button data-review-id="save-plan" type="button">Save changes</button>
+      </section>
+    </main>
+  </body>
+</html>
