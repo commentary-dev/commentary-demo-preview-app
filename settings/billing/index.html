@@ -4,6 +4,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Billing Settings</title>
+    <script>
+      (function configureCommentaryReviewParent() {
+        var commentaryParentOrigins = ["https://commentary.dev", "https://staging.commentary.dev", "http://localhost:3000", "http://localhost:3001"];
+        var allowedParentOrigins = new Set(commentaryParentOrigins);
+        var referrerOrigin = document.referrer ? new URL(document.referrer).origin : "";
+        window.__COMMENTARY_PARENT_ORIGINS__ = commentaryParentOrigins;
+        window.__COMMENTARY_PARENT_ORIGIN__ = allowedParentOrigins.has(referrerOrigin) ? referrerOrigin : "https://commentary.dev";
+      })();
+      window.__COMMENTARY_COMMIT_SHA__ = "demo-preview-app-main";
+      window.__COMMENTARY_BUILD_ID__ = "demo-preview-app-billing";
+    </script>
+    <script src="https://cdn.commentary.dev/review-sdk/latest/commentary-review-sdk.js" defer></script>
     <style>
       body { margin: 0; font-family: Inter, Arial, sans-serif; color: #172033; background: #eef4fb; }
       main { display: grid; gap: 18px; max-width: 1040px; margin: 0 auto; padding: 32px 20px; }
@@ -21,7 +33,12 @@
         <h1>Billing settings</h1>
         <p>Review plan usage, renewal timing, and billing owner controls.</p>
       </header>
-      <section data-review-id="billing-summary" aria-label="Billing summary">
+      <section
+        data-review-id="billing-summary"
+        data-commentary-id="DemoBilling.billingSummary"
+        data-commentary-component="BillingSummary"
+        data-commentary-source="src/app/settings/billing/BillingSummary.tsx:42:1"
+        aria-label="Billing summary">
         <h2>Billing summary</h2>
         <p>Usage renews on June 30 with plan changes applied immediately.</p>
       </section>
@@ -35,7 +52,12 @@
       </section>
       <section>
         <h2>Confirm changes</h2>
-        <button data-review-id="save-plan" type="button">Save changes</button>
+        <button
+          data-review-id="save-plan"
+          data-commentary-id="DemoBilling.savePlan"
+          data-commentary-component="SavePlanButton"
+          data-commentary-source="src/app/settings/billing/SavePlanButton.tsx:18:1"
+          type="button">Save changes</button>
       </section>
     </main>
   </body>
