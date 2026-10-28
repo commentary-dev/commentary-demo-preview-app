@@ -20,6 +20,52 @@
     <script src="https://cdn.commentary.dev/review-sdk/latest/commentary-review-sdk.js" defer></script>
   </head>
   <body>
-    <div id="app" aria-live="polite"></div>
+    <div id="app" aria-live="polite">
+      <header class="topbar">
+        <span class="brand">Acme Admin</span>
+        <a href="/commentary-demo-preview-app/" data-route="/">Overview</a>
+        <a href="/commentary-demo-preview-app/settings/billing" data-route="/settings/billing" aria-current="page">Billing</a>
+        <a href="/commentary-demo-preview-app/usage" data-route="/usage">Usage</a>
+        <a href="/commentary-demo-preview-app/checkout" data-route="/checkout">Checkout</a>
+      </header>
+      <main class="app-shell">
+        <section class="hero">
+          <p class="eyebrow">Settings</p>
+          <h1>Billing settings</h1>
+          <p class="lede">Review plan usage, renewal timing, billing-owner controls, and the confirmation language customers see before changing plans.</p>
+        </section>
+        <section class="two-column">
+          <article class="panel" data-review-id="billing-summary" data-commentary-id="DemoBilling.billingSummary" data-commentary-component="BillingSummary" data-commentary-source="src/app/settings/billing/BillingSummary.tsx:42:1" aria-label="Billing summary">
+            <span class="pill">Renewal</span>
+            <h2>Billing summary</h2>
+            <p>Usage renews on June 30. Plan changes apply immediately to seat limits, while invoice changes appear on the next renewal statement.</p>
+            <div class="status-row"><span>Billing owner</span><strong>finance-admin@example.test</strong></div>
+            <div class="status-row"><span>Current plan</span><strong>Business</strong></div>
+            <div class="status-row"><span>Renewal date</span><strong>June 30</strong></div>
+          </article>
+          <aside class="panel" data-commentary-id="DemoBilling.approvalPanel" data-commentary-component="BillingApprovalPanel" data-commentary-source="src/app/settings/billing/BillingApprovalPanel.tsx:18:1">
+            <h2>Approval policy</h2>
+            <ul class="checklist">
+              <li>Plan upgrades require billing-owner approval.</li>
+              <li>Downgrades warn when usage exceeds new limits.</li>
+              <li>Support receives an audit note after confirmation.</li>
+            </ul>
+          </aside>
+        </section>
+        <section class="panel">
+          <h2>Available plans</h2>
+          <div class="grid">
+            <article class="plan"><h3>Team</h3><p>For small review teams validating Markdown and HTML content.</p><strong>$49 / month</strong></article>
+            <article class="plan"><h3>Business</h3><p>For cross-functional review programs with share links and agent handoff.</p><strong>$149 / month</strong></article>
+            <article class="plan"><h3>Enterprise</h3><p>For governed provider access, audit workflows, and private support.</p><strong>Custom</strong></article>
+          </div>
+        </section>
+        <section class="panel" data-review-id="confirm-plan" data-commentary-id="DemoBilling.confirmPlan" data-commentary-component="ConfirmPlanPanel" data-commentary-source="src/app/settings/billing/ConfirmPlanPanel.tsx:24:1">
+          <h2>Confirm changes</h2>
+          <p>Changing to Enterprise increases the seat cap immediately and schedules invoice changes for the next renewal statement.</p>
+          <button data-review-id="save-plan" data-commentary-id="DemoBilling.savePlan" data-commentary-component="SavePlanButton" data-commentary-source="src/app/settings/billing/SavePlanButton.tsx:18:1" type="button">Save changes</button>
+        </section>
+      </main>
+    </div>
   </body>
 </html>

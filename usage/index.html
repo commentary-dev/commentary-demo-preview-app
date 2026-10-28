@@ -20,6 +20,42 @@
     <script src="https://cdn.commentary.dev/review-sdk/latest/commentary-review-sdk.js" defer></script>
   </head>
   <body>
-    <div id="app" aria-live="polite"></div>
+    <div id="app" aria-live="polite">
+      <header class="topbar">
+        <span class="brand">Acme Admin</span>
+        <a href="/commentary-demo-preview-app/" data-route="/">Overview</a>
+        <a href="/commentary-demo-preview-app/settings/billing" data-route="/settings/billing">Billing</a>
+        <a href="/commentary-demo-preview-app/usage" data-route="/usage" aria-current="page">Usage</a>
+        <a href="/commentary-demo-preview-app/checkout" data-route="/checkout">Checkout</a>
+      </header>
+      <main class="app-shell">
+        <section class="hero" data-review-id="usage-hero" data-commentary-id="DemoUsage.usageHero" data-commentary-component="UsageHero" data-commentary-source="src/app/usage/UsageHero.tsx:11:1">
+          <p class="eyebrow">Usage</p>
+          <h1>Usage overview</h1>
+          <p class="lede">Review the threshold warnings and account health language customers see before a plan change is required.</p>
+        </section>
+        <section class="grid" aria-label="Usage metrics">
+          <article class="metric" data-commentary-id="DemoUsage.reviewMinutes" data-commentary-component="UsageMetric" data-commentary-source="src/app/usage/UsageMetric.tsx:21:5"><strong>84%</strong><span>Review minutes used</span></article>
+          <article class="metric" data-commentary-id="DemoUsage.agentRuns" data-commentary-component="UsageMetric" data-commentary-source="src/app/usage/UsageMetric.tsx:27:5"><strong>312</strong><span>Agent context packets generated</span></article>
+          <article class="metric" data-commentary-id="DemoUsage.openThreads" data-commentary-component="UsageMetric" data-commentary-source="src/app/usage/UsageMetric.tsx:33:5"><strong>47</strong><span>Open review threads</span></article>
+        </section>
+        <section class="panel" data-review-id="usage-warning" data-commentary-id="DemoUsage.thresholdWarning" data-commentary-component="ThresholdWarning" data-commentary-source="src/app/usage/ThresholdWarning.tsx:16:1">
+          <h2>Threshold warning</h2>
+          <p>Your team is projected to reach the Business review-minute limit before the June 30 renewal. Upgrade now to avoid paused agent handoff on private reviews.</p>
+          <button type="button" class="secondary" data-commentary-id="DemoUsage.contactOwner" data-commentary-component="ThresholdWarning" data-commentary-source="src/app/usage/ThresholdWarning.tsx:25:7">Notify billing owner</button>
+        </section>
+        <section class="panel">
+          <h2>Usage by surface</h2>
+          <table>
+            <thead><tr><th>Surface</th><th>Usage</th><th>Reviewer note</th></tr></thead>
+            <tbody>
+              <tr><td>Markdown PRs</td><td>128 reviews</td><td>High adoption across docs and release notes.</td></tr>
+              <tr><td>Static HTML</td><td>21 reports</td><td>Most comments target generated tables and launch checklists.</td></tr>
+              <tr><td>Live Preview</td><td>9 previews</td><td>Billing and checkout routes account for most selected-element comments.</td></tr>
+            </tbody>
+          </table>
+        </section>
+      </main>
+    </div>
   </body>
 </html>

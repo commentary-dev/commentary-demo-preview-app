@@ -20,6 +20,39 @@
     <script src="https://cdn.commentary.dev/review-sdk/latest/commentary-review-sdk.js" defer></script>
   </head>
   <body>
-    <div id="app" aria-live="polite"></div>
+    <div id="app" aria-live="polite">
+      <header class="topbar">
+        <span class="brand">Acme Admin</span>
+        <a href="/commentary-demo-preview-app/" data-route="/">Overview</a>
+        <a href="/commentary-demo-preview-app/settings/billing" data-route="/settings/billing">Billing</a>
+        <a href="/commentary-demo-preview-app/usage" data-route="/usage">Usage</a>
+        <a href="/commentary-demo-preview-app/checkout" data-route="/checkout" aria-current="page">Checkout</a>
+      </header>
+      <main class="app-shell">
+        <section class="hero" data-review-id="checkout-hero" data-commentary-id="DemoCheckout.checkoutHero" data-commentary-component="CheckoutHero" data-commentary-source="src/app/checkout/CheckoutHero.tsx:10:1">
+          <p class="eyebrow">Checkout</p>
+          <h1>Plan change checkout</h1>
+          <p class="lede">Review the final confirmation state before the customer upgrades from Business to Enterprise.</p>
+        </section>
+        <section class="two-column">
+          <article class="checkout-card" data-review-id="checkout-summary" data-commentary-id="DemoCheckout.orderSummary" data-commentary-component="OrderSummary" data-commentary-source="src/app/checkout/OrderSummary.tsx:22:1">
+            <h2>Order summary</h2>
+            <div class="status-row"><span>New plan</span><strong>Enterprise</strong></div>
+            <div class="status-row"><span>Seat cap</span><strong>250 reviewers</strong></div>
+            <div class="status-row"><span>Effective date</span><strong>Today for limits, June 30 for billing</strong></div>
+            <p>The effective-date copy should match the billing settings page.</p>
+          </article>
+          <aside class="checkout-card" data-commentary-id="DemoCheckout.securityNote" data-commentary-component="SecurityNote" data-commentary-source="src/app/checkout/SecurityNote.tsx:14:1">
+            <h2>Security note</h2>
+            <p>Provider permissions remain authoritative. The plan change does not grant repository access to additional users.</p>
+          </aside>
+        </section>
+        <section class="panel" data-review-id="submit-order" data-commentary-id="DemoCheckout.submitOrderPanel" data-commentary-component="SubmitOrderPanel" data-commentary-source="src/app/checkout/SubmitOrderPanel.tsx:31:1">
+          <h2>Submit order</h2>
+          <p>A confirmation email will go to the billing owner and workspace admins.</p>
+          <button type="button" aria-label="Submit plan change" data-commentary-id="DemoCheckout.submitOrder" data-commentary-component="SubmitOrderButton" data-commentary-source="src/app/checkout/SubmitOrderButton.tsx:12:1">Submit plan change</button>
+        </section>
+      </main>
+    </div>
   </body>
 </html>

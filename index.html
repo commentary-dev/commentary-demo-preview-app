@@ -20,6 +20,39 @@
     <script src="https://cdn.commentary.dev/review-sdk/latest/commentary-review-sdk.js" defer></script>
   </head>
   <body>
-    <div id="app" aria-live="polite"></div>
+    <div id="app" aria-live="polite">
+      <header class="topbar">
+        <span class="brand">Acme Admin</span>
+        <a href="/commentary-demo-preview-app/" data-route="/" aria-current="page">Overview</a>
+        <a href="/commentary-demo-preview-app/settings/billing" data-route="/settings/billing">Billing</a>
+        <a href="/commentary-demo-preview-app/usage" data-route="/usage">Usage</a>
+        <a href="/commentary-demo-preview-app/checkout" data-route="/checkout">Checkout</a>
+      </header>
+      <main class="app-shell">
+        <section class="hero" data-review-id="overview-hero" data-commentary-id="DemoPreview.overviewHero" data-commentary-component="OverviewHero" data-commentary-source="src/app/overview/OverviewHero.tsx:12:1" aria-label="Preview overview">
+          <p class="eyebrow">GitHub Pages demo app</p>
+          <h1>Review a customer admin workflow before launch.</h1>
+          <p class="lede">This opted-in static preview demonstrates how Commentary reviewers can inspect a real app flow: plan renewal messaging, usage limits, and checkout confirmation copy.</p>
+          <button type="button" data-route="/settings/billing" data-commentary-id="DemoPreview.startBilling" data-commentary-component="OverviewHero" data-commentary-source="src/app/overview/OverviewHero.tsx:28:7">Review billing settings</button>
+        </section>
+        <section class="grid" aria-label="Review surfaces">
+          <article class="metric" data-commentary-id="DemoPreview.billingCard" data-commentary-component="SurfaceCard" data-commentary-source="src/app/overview/SurfaceCard.tsx:41:5">
+            <span class="pill">Billing</span>
+            <h2>Plan renewal</h2>
+            <p>Clarify whether plan changes apply immediately or at renewal.</p>
+          </article>
+          <article class="metric" data-commentary-id="DemoPreview.usageCard" data-commentary-component="SurfaceCard" data-commentary-source="src/app/overview/SurfaceCard.tsx:49:5">
+            <span class="pill">Usage</span>
+            <h2>Threshold warnings</h2>
+            <p>Review usage copy before customers hit a limit.</p>
+          </article>
+          <article class="metric" data-commentary-id="DemoPreview.checkoutCard" data-commentary-component="SurfaceCard" data-commentary-source="src/app/overview/SurfaceCard.tsx:57:5">
+            <span class="pill">Checkout</span>
+            <h2>Confirmation flow</h2>
+            <p>Validate the final action and post-submit state.</p>
+          </article>
+        </section>
+      </main>
+    </div>
   </body>
 </html>
